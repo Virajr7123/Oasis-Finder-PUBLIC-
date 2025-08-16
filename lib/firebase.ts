@@ -3,20 +3,18 @@
 import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app"
 import { getAuth, type Auth } from "firebase/auth"
 
-// Prefer env-provided config; fall back to current defaults.
-// You can set these as NEXT_PUBLIC_* in the v0 project settings if needed.
+// Your Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyCPO6gytM_AApVxxAE4QIA1rtDhuIOinMs",
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "sweet-spot-d2807.firebaseapp.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "sweet-spot-d2807",
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "sweet-spot-d2807.appspot.com", // ensure appspot.com
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "1087094087535",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:1087094087535:web:87aa1885d464a4566bd29a",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 }
 
 // Add Google Maps API key configuration
-export const GOOGLE_MAPS_API_KEY =
-  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "AIzaSyAbEb5js41huSFfNkNmDZuH_k8rfkUIudM"
+export const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 
 let authInstance: Auth | null = null
 let appInstance: FirebaseApp | null = null
